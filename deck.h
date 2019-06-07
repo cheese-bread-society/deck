@@ -7,12 +7,11 @@ template <typename T>
 class Deck
 {
 private:
-	// Item<T> *head;
-	// Item<T> *tail;
+	Item<T> *head;
+	Item<T> *tail;
 
 public:
 	Deck();
-	Deck(int length);
 	void push_back(T value);
 	void push_front(T value);
 	void pop_back(T value);

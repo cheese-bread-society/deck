@@ -6,11 +6,6 @@ Deck<T>::Deck()
 }
 
 template <typename T>
-Deck<T>::Deck(int length)
-{
-}
-
-template <typename T>
 void Deck<T>::push_back(T value)
 {
 }
@@ -46,9 +41,8 @@ void Deck<T>::clear()
 }
 
 template <typename T>
-std::ostream& operator << (std::ostream &out, const Deck<T> &d) {
+std::ostream &operator<<(std::ostream &out, const Deck<T> &d)
+{
 	out << "Deck" << std::endl;
 	return out;
 }
-
-template class Deck<int>;

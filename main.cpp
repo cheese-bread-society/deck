@@ -1,12 +1,13 @@
-
 #include <iostream>
 #include "deck.h"
-//#include "test.cpp"
-//#include "item.h"
+#include "deck.cpp"
+#include "item.h"
+#include "test.cpp"
 
 int main(int argc, char const *argv[])
 {
-	Deck<int> m_deck(2);
+	TestUnit tests;
+	tests.run();
 
 	return 0;
 }

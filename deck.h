@@ -22,5 +22,5 @@ public:
 
 	void clear();
 
-	friend std::ostream& operator << (std::ostream &out, const Deck &d);
+	// std::ostream& operator<<(std::ostream &out, Deck const &v);
 };

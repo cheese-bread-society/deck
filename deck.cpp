@@ -1,3 +1,4 @@
+#pragma once
 #include "deck.h"
 
 template <typename T>
@@ -40,9 +41,8 @@ void Deck<T>::clear()
 {
 }
 
-template <typename T>
-std::ostream &operator<<(std::ostream &out, const Deck<T> &d)
-{
-	out << "Deck" << std::endl;
-	return out;
-}
+// template <typename T>
+// std::ostream& operator<<(std::ostream &out, Deck<T> const &v)
+// {
+
+// }

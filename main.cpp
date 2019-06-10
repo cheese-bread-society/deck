@@ -1,6 +1,5 @@
 #include <iostream>
 #include "deck.h"
-#include "deck.cpp"
 #include "item.h"
 #include "test.cpp"
 

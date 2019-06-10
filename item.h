@@ -4,9 +4,11 @@ template <typename T>
 class Item
 {
 public:
-	Item *prev;
-	Item *next;
+	Item *prev = NULL;
+	Item *next = NULL;
 	T m_value;
 
 	Item(T value);
 };
+
+#include "item.cpp"

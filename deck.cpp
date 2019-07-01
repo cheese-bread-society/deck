@@ -78,12 +78,10 @@ T Deck<T>::pop_back()
 
 	if (tail == head)
 	{
-		delete head;
-		delete tail;
-		head = NULL;
-		tail = NULL;
+		clear();
 	}
 
+	m_count--;
 	return value;
 }
 
@@ -96,7 +94,23 @@ T Deck<T>::pop_front()
 		throw err;
 	}
 
-	return NULL;
+	T value = head->m_value;
+
+	if (head->next != NULL)
+	{
+		Item<T> *element = head->next;
+		element->prev = NULL;
+
+		delete head;
+		head = element;
+	}
+
+	if (head == tail) {
+		clear();
+	}
+
+	m_count--;
+	return value;
 }
 
 template <typename T>
@@ -114,6 +128,21 @@ T Deck<T>::front()
 template <typename T>
 void Deck<T>::clear()
 {
+	while(1)
+	{
+		Item<T> *element = head;
+		if(element != NULL)
+		{
+			head = element->next;
+			delete element;
+		}else
+		{
+			break;
+		}
+	}
+
+	head = NULL;
+	tail = NULL;
 }
 
 template <typename T>

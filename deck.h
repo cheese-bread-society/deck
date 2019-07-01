@@ -11,7 +11,7 @@ private:
 	Item<T> *head = NULL;
 	Item<T> *tail = NULL;
 	int m_count = 0;
-
+	
 public:
 	Deck();
 

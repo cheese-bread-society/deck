@@ -19,6 +19,9 @@ public:
 		test_pop_front_empty_deck();
 		test_pop_back_empty_deck();
 		test_pop_back();
+		test_pop_front();
+		test_front();
+		test_back();
 	}
 
 private:
@@ -159,7 +162,71 @@ private:
 		m_deck.push_front(2);
 		m_deck.push_front(3);
 
+		assert(m_deck.count() == 3);
+
 		int v = m_deck.pop_back();
+		
+		assert(v == 1);
+		assert(m_deck.count() == 2);
+
+		std::cout << "OK" << std::endl;
+	}
+
+	void test_pop_front()
+	{
+		std::cout << "Running Pop Front ";
+		// Arrange
+		Setup();
+
+		m_deck.push_front(1);
+		m_deck.push_front(2);
+		m_deck.push_front(3);
+
+		assert(m_deck.count() == 3);
+
+		int v = m_deck.pop_front();
+
+		assert(v == 3);
+		assert(m_deck.count() == 2);
+
+		std::cout << "OK" << std::endl;
+	}
+
+	void test_front()
+	{
+		std::cout << "Running Front ";
+		// Arrange
+		Setup();
+
+		m_deck.push_front(1);
+		m_deck.push_front(2);
+		m_deck.push_front(3);
+
+		assert(m_deck.count() == 3);
+
+		int v = m_deck.front();
+
+		assert(m_deck.count() == 3);
+		assert(v == 3);
+
+		std::cout << "OK" << std::endl;
+	}
+
+	void test_back()
+	{
+		std::cout << "Running Back ";
+		// Arrange
+		Setup();
+
+		m_deck.push_front(1);
+		m_deck.push_front(2);
+		m_deck.push_front(3);
+
+		assert(m_deck.count() == 3);
+
+		int v = m_deck.back();
+
+		assert(m_deck.count() == 3);
 		assert(v == 1);
 
 		std::cout << "OK" << std::endl;
